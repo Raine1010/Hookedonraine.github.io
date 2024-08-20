@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hookedonraine</title>
+<link rel="icon" type="image.png" href="images/logo.png">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+.header{
+  font-size: 17px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: white;
+}
+section{
+  margin-bottom: 70px;
+}
+.container {
+  max-width: 75%;
+  margin: auto;
+  height: 80vh;
+  margin-top: 5%;
+  padding-bottom: 20%;
+  background: white;
+  box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.3);
+}
+
+.left, .right {
+  width: 50%;
+  padding: 30px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.main_image {
+  width: auto;
+  height: auto;
+}
+
+.option img {
+  width: 75px;
+  height: 75px;
+  padding: 10px;
+}
+
+.right {
+  padding: 50px 100px 50px 50px;
+}
+
+h3 {
+  color: white;
+  margin: 20px 0 20px 0;
+  font-size: 25px;
+}
+
+h5,p {
+  color: white;
+}
+
+h4 {
+  color: white;
+}
+
+p {
+  margin: 20px 0 50px 0;
+  line-height: 25px;
+}
+
+h5 {
+  font-size: 18px;
+  margin-top: 50px;
+}
+
+
+ .cart{
+  width: 100%;
+  padding-top: ;
+  border: none;
+  outline: none;
+  background:;
+  color: white;
+  margin-left: 30px;
+  border-radius: 30px;
+}
+
+@media only screen and (max-width:768px) {
+  .container {
+    max-width: 90%;
+    margin: auto;
+    height: auto;
+    margin-top: 40px;
+  }
+
+  .left, .right {
+    width: 100%;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width:510px) {
+  .container {
+    max-width: 100%;
+    height: auto;
+    padding: 10px;
+    margin-top: 40px;
+  }
+
+  .left, .right {
+    padding: 0;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .option {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+ .details{
+  list-style-type: circle;
+  margin-left: 40px;
+  margin-bottom: 115px;
+ }
+
+
+</style>
+</head>
+<body>
+
+<!-- Navbar (Sits on top) -->
+<div class="header">
+  <div class="w3-bar w3-indigo w3-card w3-padding" id="myNavbar">
+    <a href="index.html" class="w3-bar-item w3-button w3-indigo w3-hover-indigo w3-wide">Hookedonraine</a>
+
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="index.html" class="w3-bar-item w3-button w3-hover-khaki">Home</a>
+      <div class="w3-dropdown-hover">
+       <button class="w3-button w3-hover-khaki w3-indigo">Products</button>
+         <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <a href="products.html" class="w3-bar-item w3-button w3-indigo w3-hover-khaki">All</a>
+          <a href="hats.html" class="w3-bar-item w3-button w3-indigo w3-hover-khaki">Hats</a>
+          <a href="bags.html" class="w3-bar-item w3-button w3-indigo w3-hover-khaki">Bags</a>
+          <a href="accessories.html" class="w3-bar-item w3-button w3-indigo w3-hover-khaki">Accessories</a>
+         </div>
+      </div>
+      <a href="about.html" class="w3-bar-item w3-button w3-hover-khaki"> About</a>
+      <a href="contactus.html" class="w3-bar-item w3-button w3-hover-khaki">Contact</a>
+      <a href="cart2.html"><img src="images/cart3.png" alt="cart" style="width:42px;height:42px;"></a>
+    </div>
+
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-hover-khaki w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+
+<nav class="w3-sidebar w3-bar-block w3-display-topleft w3-indigo w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display: block;" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-khaki w3-large w3-padding-16">Close ×</a>
+  <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-khaki">Home</a>
+  <div class="w3-dropdown-click">
+    <button onclick="myFunction()" class="w3-button w3-indigo w3-hover-khaki">Products</button>
+    <div id="Demo" class="w3-dropdown-content w3-bar-block">
+      <a href="products.html" class="w3-bar-item w3-button w3-indigo w3-hover-khaki">All</a>
+      <a href="hats.html" class="w3-bar-item w3-button w3-indigo w3-hover-khaki">Hats</a>
+      <a href="bags.html" class="w3-bar-item w3-button w3-indigo w3-hover-khaki">Bags</a>
+      <a href="accessories.html" class="w3-bar-item w3-button w3-indigo w3-hover-khaki">Accessories</a>
+    </div>
+  </div>
+  <a href="about.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-khaki">About</a>
+  <a href="contactus.html" onclick="w3_close" class="w3-bar-item w3-button w3-hover-khaki">Contact</a>
+  <a href="cart2.html" onclick="w3_close" class="w3-bar-item w3-button w3-hover-khaki">Cart</a>
+</nav>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("Demo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+<script>
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+
+
+<!---------Product Details--------->
+
+
+  <section>
+    <div class="container flex w3-indigo">
+      <div class="left">
+        <div class="main_image">
+          <img src="images/plaidbag2.jpg" class="slide" style="width: 400px; margin-left: 15px;margin-top: 20px;">
+        </div>
+      </div>
+      <div class="right">
+        <h3>Checkered Bag</h3>
+        <h4>$80.00</h4>
+        <h5>Crocheted Bag</h5>
+        <ul class="details">
+          <li>Made with 100% acrylic</li>
+          <li>Size- 26cm x 18cm</li>
+          <li>Strap- 66cm</li>
+          <li>Zip fastening</li>
+        </ul>
+        <a href="#" class=" cart w3-btn w3-button w3-khaki w3-hover-khaki">Add to Cart</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function img(anything) {
+      document.querySelector('.slide').src = anything;
+    }
+
+    function change(change) {
+      const line = document.querySelector('.home');
+      line.style.background = change;
+    }
+  </script>
+
+<!-------footer------->
+
+
+<footer class="w3-indigo">
+    <div class="footer-col">
+      <div class="logo">
+        <img src="images/logo2.png" alt="Logo" style="width:160px;height:160px;margin-left:2px;margin-top:15px;">
+      </div>
+    </div>
+    <div class="footer-col">
+        <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="contactus.html">Contact</a></li>
+          </ul>
+    </div>
+    <div class="footer-col">
+        <h4>Follow Me</h4>
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61561295235456"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/hookedonraine/"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

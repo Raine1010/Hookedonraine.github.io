@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hookedonraine</title>
+<link rel="icon" type="image.png" href="images/logo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+  .header{
+  font-size: 17px;
+}
+
+h5{
+  font-size: 18px;
+}
+</style>
+<body>
+
+<!-- Navbar (Sits on top) -->
+<div class="header">
+  <div class="w3-bar w3-indigo w3-card w3-padding" id="myNavbar">
+    <a href="index.html" class="w3-bar-item w3-button w3-indigo w3-hover-indigo w3-wide">Hookedonraine</a>
+
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="index.html" class="w3-bar-item w3-button w3-hover-khaki">Home</a>
+      <div class="w3-dropdown-hover">
+       <button class="w3-button w3-hover-khaki w3-indigo">Products</button>
+         <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <a href="products.html" class="w3-bar-item w3-button w3-indigo w3-hover-khaki">All</a>
+          <a href="hats.html" class="w3-bar-item w3-button w3-indigo w3-hover-khaki">Hats</a>
+          <a href="bags.html" class="w3-bar-item w3-button w3-indigo w3-hover-khaki">Bags</a>
+          <a href="accessories.html" class="w3-bar-item w3-button w3-indigo w3-hover-khaki">Accessories</a>
+         </div>
+      </div>
+      <a href="about.html" class="w3-bar-item w3-button w3-hover-khaki"> About</a>
+      <a href="contactus.html" class="w3-bar-item w3-button w3-hover-khaki">Contact</a>
+      <a href="cart2.html"><img src="images/cart3.png" alt="cart" style="width:42px;height:42px;"></a>
+    </div>
+
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-hover-khaki w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+
+<nav class="w3-sidebar w3-bar-block w3-display-topleft w3-indigo w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display: block;" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-khaki w3-large w3-padding-16">Close ×</a>
+  <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-khaki">Home</a>
+  <div class="w3-dropdown-click">
+    <button onclick="myFunction()" class="w3-button w3-indigo w3-hover-khaki">Products</button>
+    <div id="Demo" class="w3-dropdown-content w3-bar-block">
+      <a href="products.html" class="w3-bar-item w3-button w3-indigo w3-hover-khaki">All</a>
+      <a href="hats.html" class="w3-bar-item w3-button w3-indigo w3-hover-khaki">Hats</a>
+      <a href="bags.html" class="w3-bar-item w3-button w3-indigo w3-hover-khaki">Bags</a>
+      <a href="accessories.html" class="w3-bar-item w3-button w3-indigo w3-hover-khaki">Accessories</a>
+    </div>
+  </div>
+  <a href="about.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-khaki">About</a>
+  <a href="contactus.html" onclick="w3_close" class="w3-bar-item w3-button w3-hover-khaki">Contact</a>
+  <a href="cart2.html" onclick="w3_close" class="w3-bar-item w3-button w3-hover-khaki">Cart</a>
+</nav>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("Demo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+<script>
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+
+
+<!-- About -->
+<div class="w3-panel ">
+<div id="about" class="w3-container w3-padding-32">
+
+<div class="w3-display-container w3-content" style="width:300px;margin-top: 4px;margin-bottom: 50px;">
+<img class="w3-image" src="images/Logo.png" alt="Logo" width="100%">
+<div class="w3-display-middle w3-margin-bottom w3-center">
+
+</div>
+</div>
+
+
+
+<center><h2 class="" style="margin-bottom: 30px;">About Me</h2>
+<h5>Hey, I'm Raine and I am the designer/maker behind Hookedonraine. I am based in Trinidad and Tobago, working from my home studio. Hookedonraine is a one-woman brand trying to do its bit in the fashion revolution.</h5>
+
+<h5>Crochet is my passion and I love to make fun, colourful 
+clothing and accessories. 
+At Hookedonraine, I am passionate about the artistry and joy of crochet. Founded with a love for creating beautiful, handcrafted pieces, I specialize in handmade hats, bags, clothing and accessories.</h5>
+
+<h5>When you choose Hookedonraine, you're not just purchasing a product; you're investing in a piece of artistry. Whether you're looking for a custom bag or a unique gift for a loved one, I am dedicated to creating something special just for you. I value your trust and strive to exceed your expectations with every creation.</h5>
+
+<h5>Thank you to all my customers for supporting my passion and allowing me to do what I love!</h5>
+</center>
+</div>
+</div>
+
+<!-------footer------->
+
+<footer class="w3-indigo">
+    <div class="footer-col">
+      <div class="logo">
+        <img src="images/logo2.png" alt="Logo" style="width:160px;height:160px;margin-left:2px;margin-top:15px;">
+      </div>
+    </div>
+    <div class="footer-col">
+        <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="contactus.html">Contact</a></li>
+          </ul>
+    </div>
+    <div class="footer-col">
+        <h4>Follow Me</h4>
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61561295235456"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/hookedonraine/"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</footer>
+
+<!-- End page content -->
+
+
+</body>
+</html>
+

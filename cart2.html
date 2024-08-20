@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hookedonraine</title>
+<link rel="icon" type="image.png" href="images/logo.png">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+  .header{
+  font-size: 17px;
+}
+
+.cart-section{
+  width: 100%;
+  padding: 10px 5vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-list{
+  width: 70%;
+}
+
+.section-heading{
+  font-size: 30px;
+  font-weight: normal;
+  margin: 20px 0;
+  text-transform: capitalize;
+}
+
+.cart{
+  width: 100%;
+  padding: 30px;
+  border-radius: 5px;
+  border: 1px solid #d8d8d8;
+  margin-bottom: 60px;
+}
+
+.checkout-box{
+  width: 100%;
+  height: 200px;
+  border-radius: 2px;
+  border: 1px solid white;
+  padding: 20px;
+}
+
+.text{
+  text-transform: capitalize;
+  font-size: 18px;
+}
+
+.sm-product{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.cart .sm-product: last-child{
+  margin-bottom: 0;
+}
+
+.sm-product-img{
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.sm-text{
+  width: 50%;
+  margin-left: 20px;
+}
+
+.sm-product-name{
+  font-size: 17px;
+  font-weight: normal;
+  text-transform: capitalize;
+}
+
+.sm-des{
+  font-size: 18px;
+  opacity: 0.5;
+  line-height: 25px;
+  text-transform: capitalize;
+  margin-top: 10px;
+}
+
+
+.sm-price{
+  font-size: 15px;
+  font-weight: normal;
+  color: black;
+  margin-right: 50px;
+  margin-left: 30px;
+}
+
+
+.close {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  padding: 12px 16px;
+  transform: translate(0%, -50%);
+
+}
+
+.close:hover {background: pink;}
+
+/*------checkout section------*/
+.checkout-section{
+  width: 28%;
+}
+
+.checkout-box{
+  width: 100%;
+  height: 350px;
+  border-radius: 2px;
+  border: 1px solid #d8d8d8;
+  padding: 20px;
+  margin-top: 75px;
+}
+
+.text{
+  text-transform: capitalize;
+  font-size: 18px;
+  padding-bottom: 10px;
+}
+.text{
+  border-bottom-style: ridge; 
+}
+
+.checkout-btn{
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  height: 40px;
+  border-radius: 5px;
+  background: pink;
+  color: black;
+  text-align: center;
+  line-height: 20px;
+  text-transform: capitalize;
+  text-decoration: none; 
+}
+
+.bill{
+  font-size: 20px;
+  font-weight: 200;
+  margin: 10px 0;
+  padding-top: 20px;
+}
+.bill{border-top-style: ridge;}
+
+table,th, td{
+  border:1px solid white;
+  border-collapse: collapse;
+  padding-right: 160px;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+
+total{
+  padding-right: 20px;
+}
+
+/*--------counter------*/
+input-number{
+  margin-left: 20px;
+}
+
+
+</style>
+</head>
+<body>
+
+<!-- Navbar (Sits on top) -->
+<div class="header">
+  <div class="w3-bar w3-indigo w3-card w3-padding" id="myNavbar">
+    <a href="index.html" class="w3-bar-item w3-button w3-indigo w3-hover-indigo w3-wide">Hookedonraine</a>
+
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="index.html" class="w3-bar-item w3-button w3-hover-khaki">Home</a>
+      <div class="w3-dropdown-hover">
+       <button class="w3-button w3-hover-khaki w3-indigo">Products</button>
+         <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <a href="products.html" class="w3-bar-item w3-button w3-indigo w3-hover-khaki">All</a>
+          <a href="hats.html" class="w3-bar-item w3-button w3-indigo w3-hover-khaki">Hats</a>
+          <a href="bags.html" class="w3-bar-item w3-button w3-indigo w3-hover-khaki">Bags</a>
+          <a href="accessories.html" class="w3-bar-item w3-button w3-indigo w3-hover-khaki">Accessories</a>
+         </div>
+      </div>
+      <a href="about.html" class="w3-bar-item w3-button w3-hover-khaki"> About</a>
+      <a href="contactus.html" class="w3-bar-item w3-button w3-hover-khaki">Contact</a>
+      <a href="cart2.html"><img src="images/cart3.png" alt="cart" style="width:42px;height:42px;"></a>
+
+    </div>
+
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-hover-khaki w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+
+<nav class="w3-sidebar w3-bar-block w3-display-topleft w3-indigo w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display: block;" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-khaki w3-large w3-padding-16">Close ×</a>
+  <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-khaki">Home</a>
+  <div class="w3-dropdown-click">
+    <button onclick="myFunction()" class="w3-button w3-indigo w3-hover-khaki">Products</button>
+    <div id="Demo" class="w3-dropdown-content w3-bar-block">
+      <a href="products.html" class="w3-bar-item w3-button w3-indigo w3-hover-khaki">All</a>
+      <a href="hats.html" class="w3-bar-item w3-button w3-indigo w3-hover-khaki">Hats</a>
+      <a href="bags.html" class="w3-bar-item w3-button w3-indigo w3-hover-khaki">Bags</a>
+      <a href="accessories.html" class="w3-bar-item w3-button w3-indigo w3-hover-khaki">Accessories</a>
+    </div>
+  </div>
+  <a href="about.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-khaki">About</a>
+  <a href="contactus.html" onclick="w3_close" class="w3-bar-item w3-button w3-hover-khaki">Contact</a>
+</nav>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("Demo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+<script>
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+
+<!---------Cart--------->
+<div class="cart-section">
+  <div class="product-list">
+    <p class="section-heading">Your cart</p>
+    <div class="cart">
+      <!----cart prod goes here---->
+    <div class="sm-product">
+      <img src="images/pinkhat.jpg" class="sm-product-img">
+      <div class="sm-text">
+        <p class="sm-product-name">Granny Circle Bucket Hat</p>
+        <p class="sm-des"></p>
+      </div>
+           <input type="number" id="points" name="points" step="1">
+        <p class="sm-price">$60.00</p>
+         <span class="close">&times;</span>
+     </div>
+
+      <div class="sm-product">
+      <img src="images/booksleeve.jpg" class="sm-product-img">
+      <div class="sm-text">
+        <p class="sm-product-name">Booksleeve</p>
+        <p class="sm-des"></p>
+      </div>
+      <input type="number" id="points" name="points" step="1">
+        <p class="sm-price">$70.00</p>
+        <span class="close">&times;</span>
+     </div>
+
+      <div class="sm-product">
+      <img src="images/wafflebag.jpg" class="sm-product-img">
+      <div class="sm-text">
+        <p class="sm-product-name">Waffle Bag</p>
+        <p class="sm-des"></p>
+      </div>
+      <div class="input-number">
+      <input type="number" id="points" name="points" step="1">
+      </div>
+        <p class="sm-price">$90.00</p>
+        <span class="close">&times;</span>
+     </div>
+
+    </div>
+  </div>
+    <div class="checkout-section">
+      <div class="checkout-box">
+        <p class="text">Order Summary</p>
+        <table class="check">
+          <tr>
+            <td>Subtotal</td>
+            <td>$220.00</td>
+          </tr>
+          <tr>
+            <td>Delivery</td>
+            <td>$25.00</td>
+          </tr>
+        </table>
+         <p class="bill">Total</p>
+          <table class="total">
+          <tr>
+            <td>Total</td>
+            <td>$245.00</td>
+          </tr>
+          </table>
+        <a href="/checkout" class="checkout-btn w3-btn w3-indigo w3-hover-khaki">checkout</a>
+    </div>
+</div>
+</div>
+
+<script>
+var closebtns = document.getElementsByClassName("close");
+var i;
+
+for (i = 0; i < closebtns.length; i++) {
+  closebtns[i].addEventListener("click", function() {
+    this.parentElement.style.display = 'none';
+  });
+}
+</script>
+
+
+
+
+<!-------footer------->
+
+<footer class="w3-indigo">
+    <div class="footer-col">
+      <div class="logo">
+        <img src="images/logo2.png" alt="Logo" style="width:160px;height:160px;margin-left:2px;margin-top:15px;">
+      </div>
+    </div>
+    <div class="footer-col">
+        <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="contactus.html">Contact</a></li>
+          </ul>
+    </div>
+    <div class="footer-col">
+        <h4>Follow Me</h4>
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61561295235456"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/hookedonraine/"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
